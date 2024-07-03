@@ -1,0 +1,19 @@
+ <----------------------MySQL vs Postgres---------------------->
+ 
+ # both relational database managment system ( Store data in a structured manner as in a table form)
+ # sql (performs various operations as querying, managing data using sql statements , updating  )
+ # they both offer replication and clustering (these will allow to create multiple copies of database, ensure high availability and performance)
+ # datatypes
+ 
+ MySQL
+ 
+ # MySQL is an open-source RDBMS developed by Oracle Corporation. It is widely used for web applications and is known for its speed, reliability, and ease of use.
+ # MySQL is a traditional relational database management system
+ # simplified sql syntax
+ 
+ postgreSQL
+ 
+# PostgreSQL is an open-source relational database management system (RDBMS) that uses SQL as its query language. It is known for its advanced features, extensibility, and compliance with SQL standards.
+#  PostgreSQL is an object-relational database management system
+# complex sql syntax
+# PostgreSQL supports advanced features such as: * Multi-version concurrency control (MVCC) * Window functions * Common table expressions (CTEs) * JSON data type * Support for various data types, including arrays, hstore, and JSON
