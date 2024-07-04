@@ -1,0 +1,25 @@
+-----------DDL------
+
+---> to create a database
+CREATE DATABASE database_name;
+
+----> Drop Database
+DROP DATABASE database_name;
+
+----> Create Table
+CREATE TABLE table_name (
+    column1 datatype PRIMARY KEY,
+    column2 datatype NOT NULL,
+    column3 datatype
+);
+
+----> Drop Table
+DROP TABLE table_name;
+
+----> Alter Table
+#Add a column:
+ALTER TABLE table_name ADD column_name datatype;
+#Drop a column:
+ALTER TABLE table_name DROP COLUMN column_name;
+#Rename a column:
+ALTER TABLE table_name RENAME COLUMN old_name TO new_name;

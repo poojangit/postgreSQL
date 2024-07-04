@@ -1,0 +1,9 @@
+psql -U your_username -d your_database -p post-number ---> this will access into our database
+\dt --> To list all tables in the current database
+\d ---> To view the structure of a specific table (columns, data types, etc.)
+\dn ---> To list all schemas in the current database
+\di --> To list all indexes in the current database
+\ds --> To list all sequences in the current database
+\dv --> To list all views in the current database
+\c --> to connect to a database
+
