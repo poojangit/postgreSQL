@@ -1,0 +1,49 @@
+-------------------------------------------Numeric Types--------------------------------
+1. Integer Types:
+	INTEGER or INT: Standard integer type.
+	BIGINT: Large integer (8 bytes).
+	SMALLINT: Small integer (2 bytes).
+	
+2. Floating-Point Types:
+	REAL: Single precision floating point (4 bytes).
+	DOUBLE PRECISION or FLOAT: Double precision floating point (8 bytes).
+	
+3. Fixed-Point Types:
+	NUMERIC(precision, scale): Arbitrary precision number (exact).
+-------------------------------------Character Types-----------------------------
+1.Character Types:
+	CHAR(n): Fixed-length character string.
+	VARCHAR(n): Variable-length character string.
+	TEXT: Variable-length character string (unlimited length).
+	
+2.Date/Time Types
+	Date/Time Types:
+	DATE: Date (YYYY-MM-DD).
+	TIME: Time of day without timezone.
+	TIMESTAMP: Date and time including timezone.
+	TIMESTAMP WITH TIME ZONE: Date and time with timezone.
+	INTERVAL: Period of time.
+	
+-----------------------------------Boolean Type-----------------------------------
+	BOOLEAN: Stores true/false values.
+	
+-----------------------------------Geometric Types----------------------------------
+	Various types for geometric data such as points, lines, circles, polygons, etc.
+	
+------------------------------Network Address Types--------------------------------
+	INET: IPv4 or IPv6 hosts and networks.
+	CIDR: IPv4 or IPv6 networks.
+	
+------------------------------Arrays and Composite Types------------------------------
+	ARRAY: Array of any data type.
+	ROW: Composite type to represent a row of a table.
+	JSON and JSONB Types
+	JSON: Stores JSON data in text format.
+	JSONB: Stores JSON data in a binary format (more efficient).
+	
+-------------------------Specialized Types-------------------------------
+	UUID: Universally unique identifier.
+	XML: Stores XML data.
+	
+--------------------------------Custom Types---------------------------
+	PostgreSQL allows you to create your own custom data types using CREATE TYPE.

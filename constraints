@@ -1,0 +1,8 @@
+Here are the main types of constraints available in PostgreSQL:
+
+1.NOT NULL: Ensures that a column cannot have a NULL value.
+2.UNIQUE: Ensures that all values in a column are unique.
+3.PRIMARY KEY: A combination of NOT NULL and UNIQUE. Uniquely identifies each row in a table.
+4.FOREIGN KEY: Ensures the referential integrity of the data in one table to match values in another table.
+5.CHECK: Ensures that the value in a column meets a specific condition.
+6.EXCLUSION: Ensures that if any two rows are compared on the specified column or expression, at least one of these comparisons will return false or null.
