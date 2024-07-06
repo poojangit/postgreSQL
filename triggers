@@ -1,0 +1,36 @@
+------------------------------triggers-----------------------------
+
+triggers are special procedures that are automatically executed or fired when certain events occur. These events can be INSERT, UPDATE, or DELETE operations on a table or view. 
+step 1 :
+create a new column 
+
+alter table emp
+mydatabase-# add column last_modified timestamp;
+
+Step 2: 
+create a trigger function : 
+
+create or replace function update_last_modified()
+mydatabase-# returns trigger as $$
+mydatabase$# begin
+mydatabase$# new.last_modified := now();
+mydatabase$# return new;
+mydatabase$# end;
+mydatabase$# $$
+mydatabase-# language plpgsql;
+
+Step 3 :
+create a trigger
+
+create trigger before_update_trigger
+mydatabase-# before update on emp
+mydatabase-# for each row
+execute function update_modified();
+
+step 4:
+test the trigger
+
+1.insert a new column
+2. update that column
+3. retrive the table
+
