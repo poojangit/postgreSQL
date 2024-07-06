@@ -1,0 +1,21 @@
+---------------------------------------Views--------------------------------
+
+A view is a named query that can be used as a table in other queries. It does not store data itself but provides a way to look at data in one or more tables.
+
+CREATE VIEW view_name AS
+SELECT columns
+FROM tables
+WHERE conditions;
+
+to view it -----> \dv
+
+-------Creating a Materialized View
+
+materialized view are the physical view it stores the data . and it should be refreshed in order to update the data.
+
+create materialized view total_sal 
+as select sum(sal) as overall_sal
+from emp;
+
+refresh materialized view total_sal;
+ to view it ------> \dm
