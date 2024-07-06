@@ -1,0 +1,38 @@
+----------------------------------STORED PROCEDURES----------------------
+
+A stored procedure is a collection of SQL statements and optional control-of-flow statements stored under a name and processed as a unit. They are used to encapsulate business logic, perform repetitive tasks, enforce data integrity, and enhance performance. Stored procedures are a key feature in many relational database management systems, including PostgreSQL.
+
+CREATE PROCEDURE
+Stored procedures created with CREATE PROCEDURE are designed to perform actions that do not necessarily return a value but can perform complex operations, including modifying data and managing transactions.
+
+CREATE TABLE invoices (
+    invoice_id serial PRIMARY KEY,
+    customer_name text NOT NULL,
+    total_amount numeric NOT NULL,
+    invoice_date date NOT NULL
+);
+
+CREATE OR REPLACE PROCEDURE create_invoice(
+    IN customer_name text,
+    IN total_amount numeric,
+    IN invoice_date date
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO invoices (customer_name, total_amount, invoice_date) 
+    VALUES (customer_name, total_amount, invoice_date);
+END;
+$$;
+
+CALL create_invoice('John Doe', 250.75, '2023-07-06');
+
+# When you create the procedure with CREATE OR REPLACE PROCEDURE, PostgreSQL parses, optimizes, and compiles the SQL code within the procedure.
+# When you call the procedure using CALL add_employee(...), PostgreSQL executes the precompiled code, which is faster because the parsing and optimization have already been done.
+
+Key Characteristics of Stored Procedures:
+
+Encapsulation of Logic
+Modular Code
+Improved Performance
+Security
