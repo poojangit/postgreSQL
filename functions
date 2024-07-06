@@ -1,0 +1,57 @@
+-------------------------------functions----------------------------------
+
+n PostgreSQL, functions (also known as stored functions) are routines that encapsulate a set of SQL statements and operations. They can be used to perform operations and calculations, returning results to the caller. Functions are useful for code reusability, encapsulating business logic, and performing complex calculations within the database.
+
+Creating (user-defined)Functions---------------------------->>>>>>>
+Functions in PostgreSQL can be created using the CREATE FUNCTION statement. Here is a basic example:
+
+CREATE [OR REPLACE] FUNCTION function_name (parameter_list)
+RETURNS return_type AS $$
+BEGIN
+    -- Function body
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE FUNCTION get_emp(empno integer)
+RETURNS TABLE(ename text, job text)
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT e.ename, e.job
+    FROM emp e
+    WHERE e.empno = get_emp.empno;
+END;
+$$ LANGUAGE plpgsql;
+
+
+SELECT * FROM get_emp(7369);
+
+#Return Value: Functions are designed to return a single value or a table of values.
+#Limited Transaction Control: Functions cannot perform transaction control commands like COMMIT or ROLLBACK.
+
+
+Single-row Functions---------------------------------->>>>>>>>>>>>>>>>>>>>
+
+Single-row functions in PostgreSQL operate on individual rows and return a single result per row. 
+
+1.String Functions
+
+UPPER(string): Converts a string to uppercase.
+LOWER(string): Converts a string to lowercase.
+SUBSTRING(string FROM start FOR length): Extracts a substring.
+CONCAT(string1, string2, ...): Concatenates multiple strings.
+
+2.Numeric Functions
+
+ABS(number): Returns the absolute value.
+CEIL(number): Returns the smallest integer greater than or equal to the number.
+FLOOR(number): Returns the largest integer less than or equal to the number.
+ROUND(number, decimal_places): Rounds the number to the specified number of decimal places.
+
+3.Date/Time Functions
+
+CURRENT_DATE: Returns the current date.
+CURRENT_TIME: Returns the current time.
+NOW(): Returns the current date and time.
+AGE(timestamp): Calculates the interval between the given timestamp and now.
