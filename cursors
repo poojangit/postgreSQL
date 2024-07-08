@@ -1,0 +1,32 @@
+---------------------Cursors----------------------------------------
+
+A Cursor in PostgreSQL is used to process large tables. Suppose if a table has 10 million or billion rows. While performing a SELECT operation on the table it will take some time to process the result and most likely give an “out of memory” error and the program will be terminated.
+
+A Cursor can only be declared inside a transaction. The cursor does not calculate the data but only prepares the query so that your data can be created when FETCH is called. In the end, simply commit the transaction.
+
+syntax----------->>
+
+DECLARE 
+    [cursor_name] CURSOR FOR [query]
+    
+After declaring a cursor, we can get the data using FETCH. The FETCH gets the next row(s) from the cursor. If no row found, then it returns NULL.
+
+FETCH [direction (rows)] FROM [cursor_name];
+
+where direction can be empty,
+number of rows you want or one of the following:
+
+NEXT
+PRIOR
+FIRST
+LAST
+ABSOLUTE count
+RELATIVE count
+count
+ALL
+FORWARD
+FORWARD count
+FORWARD ALL
+BACKWARD
+BACKWARD count
+BACKWARD ALL
