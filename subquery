@@ -1,0 +1,10 @@
+Subqueries in PostgreSQL are queries nested inside another query. They can be used in various parts of a SQL statement including the SELECT list, FROM clause, WHERE clause, and more. Subqueries are a powerful tool to perform complex queries and data manipulation.
+
+-----------------------Types of Subqueries------------------------
+
+Scalar Subquery: Returns a single value.
+Row Subquery: Returns a single row.
+Table Subquery: Returns a table (multiple rows and columns).
+
+Correlated Subquery: A subquery that references columns from the outer query.
+Correlated subqueries are useful when you need to perform row-by-row comparisons or calculations based on data from the outer query. joins conditions are mandatory
